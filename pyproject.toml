@@ -12,6 +12,7 @@ dependencies = [
     "PyJWT==2.10.1",
     "scikit-learn==1.6.1",
     "SQLAlchemy==2.0.40",
+    "uvicorn[standard]==0.34.0",
 ]
 
 [tool.pytest.ini_options]

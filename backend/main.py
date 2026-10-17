@@ -18,6 +18,8 @@ app = FastAPI(
     title="Wholesale-Retail Marketplace API",
     description="Marketplace, recommendation, and demand forecasting API.",
     version="1.0.0",
+    docs_url="/api/docs",
+    openapi_url="/api/openapi.json",
     lifespan=lifespan,
 )
 app.add_middleware(
@@ -27,9 +29,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.include_router(router)
+app.include_router(router, prefix="/api")
 
 
-@app.get("/health")
+@app.get("/api/health")
 def health():
     return {"status": "ok"}

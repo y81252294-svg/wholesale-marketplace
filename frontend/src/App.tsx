@@ -9,7 +9,7 @@ import {
   YAxis,
 } from "recharts";
 
-const API = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL ?? "/api";
 
 type Role = "retailer" | "wholesaler" | "admin";
 type Account = { id: number; email: string; role: Role };

@@ -83,7 +83,7 @@ Python 3.11, Node.js 20+, npm, and (for Docker) Docker Compose are required.
    uvicorn backend.main:app --reload
    ```
 
-   API docs: <http://localhost:8000/docs>. Health check: <http://localhost:8000/health>.
+   API docs: <http://localhost:8000/api/docs>. Health check: <http://localhost:8000/api/health>.
 
 5. Start the web app in another terminal:
 
@@ -93,7 +93,18 @@ Python 3.11, Node.js 20+, npm, and (for Docker) Docker Compose are required.
    npm run dev
    ```
 
-   Open <http://localhost:5173>. The API URL defaults to `http://localhost:8000`; override with `VITE_API_URL` before building if needed.
+   Open <http://localhost:5173>. The Vite dev server proxies `/api` requests to `http://127.0.0.1:8000`.
+
+## Deploy on Vercel
+
+The root `vercel.json` configures a Vercel Services deployment with two public routes:
+
+- `frontend` serves the Vite app at `/` and all non-API paths.
+- `app` serves FastAPI at `/api/*`.
+
+The browser calls the API through the same-origin `/api` path, so no service binding is required (bindings are for server-side service-to-service calls). Before deploying, configure `DATABASE_URL` with a persistent hosted PostgreSQL database and set a strong `JWT_SECRET_KEY` in the Vercel project environment for Production and Preview. Do not use the default SQLite database or sample credentials in a hosted environment. Run database migrations against the hosted database with `alembic upgrade head`; synthetic demo accounts are only created by explicitly running `python -m data.seed` and should not be seeded into a public production database.
+
+Import the GitHub repository into Vercel and deploy it as one project using the committed root `vercel.json`. The API documentation will be available at `/api/docs`, and the health endpoint at `/api/health`.
 
 ## Run with Docker Compose
 

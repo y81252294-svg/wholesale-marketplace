@@ -72,15 +72,15 @@ def client():
 
 
 def sign_in(client: TestClient, email: str):
-    response = client.post("/auth/login", json={"email": email, "password": "TestPassword123!"})
+    response = client.post("/api/auth/login", json={"email": email, "password": "TestPassword123!"})
     assert response.status_code == 200, response.text
     return {"Authorization": f"Bearer {response.json()['access_token']}"}
 
 
 def test_health_and_admin_approval_flow(client):
-    assert client.get("/health").json() == {"status": "ok"}
+    assert client.get("/api/health").json() == {"status": "ok"}
     registered = client.post(
-        "/auth/register",
+        "/api/auth/register",
         json={
             "email": "new-retailer@example.test",
             "password": "NewPassword123!",
@@ -91,41 +91,41 @@ def test_health_and_admin_approval_flow(client):
     )
     assert registered.status_code == 201
     pending_login = client.post(
-        "/auth/login",
+        "/api/auth/login",
         json={"email": "new-retailer@example.test", "password": "NewPassword123!"},
     )
     assert pending_login.status_code == 403
-    response = client.post("/auth/login", json={"email": "retailer@example.test", "password": "TestPassword123!"})
+    response = client.post("/api/auth/login", json={"email": "retailer@example.test", "password": "TestPassword123!"})
     assert response.status_code == 403
     admin_headers = sign_in(client, "admin@example.test")
-    pending = client.get("/admin/accounts", headers=admin_headers)
+    pending = client.get("/api/admin/accounts", headers=admin_headers)
     assert pending.status_code == 200
     retailer_id = next(row["id"] for row in pending.json() if row["email"] == "retailer@example.test")
-    assert client.post(f"/admin/accounts/{retailer_id}/approve", headers=admin_headers).status_code == 200
+    assert client.post(f"/api/admin/accounts/{retailer_id}/approve", headers=admin_headers).status_code == 200
     assert sign_in(client, "retailer@example.test")["Authorization"].startswith("Bearer ")
 
 
 def test_order_enforces_pack_multiple_and_wholesaler_can_confirm(client):
     admin_headers = sign_in(client, "admin@example.test")
-    pending = client.get("/admin/accounts", headers=admin_headers).json()
+    pending = client.get("/api/admin/accounts", headers=admin_headers).json()
     retailer_id = next(row["id"] for row in pending if row["email"] == "retailer@example.test")
-    client.post(f"/admin/accounts/{retailer_id}/approve", headers=admin_headers)
+    client.post(f"/api/admin/accounts/{retailer_id}/approve", headers=admin_headers)
     retailer_headers = sign_in(client, "retailer@example.test")
-    products = client.get("/products", headers=retailer_headers).json()
+    products = client.get("/api/products", headers=retailer_headers).json()
     product_id = products[0]["id"]
-    invalid = client.post("/orders", headers=retailer_headers, json={"items": [{"product_id": product_id, "quantity": 3}]})
+    invalid = client.post("/api/orders", headers=retailer_headers, json={"items": [{"product_id": product_id, "quantity": 3}]})
     assert invalid.status_code == 422
-    created = client.post("/orders", headers=retailer_headers, json={"items": [{"product_id": product_id, "quantity": 4}]})
+    created = client.post("/api/orders", headers=retailer_headers, json={"items": [{"product_id": product_id, "quantity": 4}]})
     assert created.status_code == 201
     assert created.json()["total_amount"] == 10.0
     wholesaler_headers = sign_in(client, "wholesaler@example.test")
-    decision = client.post(f"/orders/{created.json()['id']}/confirm", headers=wholesaler_headers)
+    decision = client.post(f"/api/orders/{created.json()['id']}/confirm", headers=wholesaler_headers)
     assert decision.status_code == 200
     assert decision.json()["status"] == "confirmed"
-    current_stock = client.get("/products").json()[0]["stock_qty"]
+    current_stock = client.get("/api/products").json()[0]["stock_qty"]
     assert current_stock == 16
-    forecast = client.get(f"/forecast/{product_id}?horizon=2")
+    forecast = client.get(f"/api/forecast/{product_id}?horizon=2")
     assert forecast.status_code == 200
     assert len(forecast.json()) == 2
-    recommendations = client.get("/recommendations/1", headers=retailer_headers)
+    recommendations = client.get("/api/recommendations/1", headers=retailer_headers)
     assert recommendations.status_code == 200

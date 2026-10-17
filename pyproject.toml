@@ -1,0 +1,9 @@
+[project]
+name = "wholesale-retail-marketplace"
+version = "1.0.0"
+requires-python = ">=3.11,<3.12"
+description = "ML-based wholesale-retail marketplace"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

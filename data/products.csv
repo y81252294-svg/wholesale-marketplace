@@ -1,0 +1,301 @@
+product_id,wholesaler_id,category_id,sku,name,brand,unit_price,min_order_qty,order_multiple,stock_qty,is_synthetic
+1,1,1,SYN-0001,Sparkling Water 001,Northstar,29.69,1,6,610,True
+2,2,2,SYN-0002,Roasted Nuts 002,Harbor,32.8,1,1,882,True
+3,3,3,SYN-0003,Dish Soap 003,Evergreen,4.71,1,2,1174,True
+4,4,4,SYN-0004,Hand Wash 004,Market House,29.22,1,6,975,True
+5,5,5,SYN-0005,Pasta 005,Cedar & Co.,5.96,1,12,622,True
+6,1,6,SYN-0006,Oat Milk 006,Northstar,14.88,1,1,1123,True
+7,2,7,SYN-0007,Frozen Berries 007,Harbor,24.91,1,2,1013,True
+8,3,8,SYN-0008,Paper Towels 008,Evergreen,17.55,1,2,388,True
+9,4,9,SYN-0009,Pet Treats 009,Market House,21.63,1,12,217,True
+10,5,10,SYN-0010,Olive Oil 010,Cedar & Co.,31.67,1,1,813,True
+11,1,11,SYN-0011,Baking Flour 011,Northstar,29.11,1,6,522,True
+12,2,12,SYN-0012,Storage Bags 012,Harbor,36.92,1,2,1087,True
+13,3,1,SYN-0013,Granola Bars 013,Evergreen,29.86,1,6,354,True
+14,4,2,SYN-0014,Laundry Detergent 014,Market House,18.4,1,2,195,True
+15,5,3,SYN-0015,Canned Tomatoes 015,Cedar & Co.,6.92,1,6,867,True
+16,1,4,SYN-0016,Green Tea 016,Northstar,28.62,1,1,1165,True
+17,2,5,SYN-0017,Coffee Beans 017,Harbor,13.22,1,12,538,True
+18,3,6,SYN-0018,Rice Crackers 018,Evergreen,18.51,1,6,348,True
+19,4,7,SYN-0019,Sparkling Water 019,Market House,6.02,1,6,649,True
+20,5,8,SYN-0020,Roasted Nuts 020,Cedar & Co.,9.59,1,2,853,True
+21,1,9,SYN-0021,Dish Soap 021,Northstar,17.32,1,1,1024,True
+22,2,10,SYN-0022,Hand Wash 022,Harbor,26.98,1,1,477,True
+23,3,11,SYN-0023,Pasta 023,Evergreen,31.84,1,2,995,True
+24,4,12,SYN-0024,Oat Milk 024,Market House,15.49,1,12,452,True
+25,5,1,SYN-0025,Frozen Berries 025,Cedar & Co.,26.33,1,6,296,True
+26,1,2,SYN-0026,Paper Towels 026,Northstar,8.6,1,12,157,True
+27,2,3,SYN-0027,Pet Treats 027,Harbor,30.17,1,6,848,True
+28,3,4,SYN-0028,Olive Oil 028,Evergreen,27.16,1,1,969,True
+29,4,5,SYN-0029,Baking Flour 029,Market House,18.12,1,2,747,True
+30,5,6,SYN-0030,Storage Bags 030,Cedar & Co.,6.39,1,1,270,True
+31,1,7,SYN-0031,Granola Bars 031,Northstar,25.81,1,6,644,True
+32,2,8,SYN-0032,Laundry Detergent 032,Harbor,22.02,1,1,953,True
+33,3,9,SYN-0033,Canned Tomatoes 033,Evergreen,24.58,1,2,731,True
+34,4,10,SYN-0034,Green Tea 034,Market House,21.8,1,6,469,True
+35,5,11,SYN-0035,Coffee Beans 035,Cedar & Co.,2.38,1,1,608,True
+36,1,12,SYN-0036,Rice Crackers 036,Northstar,9.14,1,1,578,True
+37,2,1,SYN-0037,Sparkling Water 037,Harbor,32.61,1,1,395,True
+38,3,2,SYN-0038,Roasted Nuts 038,Evergreen,3.39,1,12,445,True
+39,4,3,SYN-0039,Dish Soap 039,Market House,12.04,1,2,845,True
+40,5,4,SYN-0040,Hand Wash 040,Cedar & Co.,21.72,1,2,973,True
+41,1,5,SYN-0041,Pasta 041,Northstar,25.66,1,2,576,True
+42,2,6,SYN-0042,Oat Milk 042,Harbor,31.17,1,1,325,True
+43,3,7,SYN-0043,Frozen Berries 043,Evergreen,2.08,1,1,244,True
+44,4,8,SYN-0044,Paper Towels 044,Market House,27.8,1,6,634,True
+45,5,9,SYN-0045,Pet Treats 045,Cedar & Co.,7.18,1,12,676,True
+46,1,10,SYN-0046,Olive Oil 046,Northstar,6.85,1,2,881,True
+47,2,11,SYN-0047,Baking Flour 047,Harbor,17.65,1,1,550,True
+48,3,12,SYN-0048,Storage Bags 048,Evergreen,12.33,1,6,811,True
+49,4,1,SYN-0049,Granola Bars 049,Market House,14.55,1,12,242,True
+50,5,2,SYN-0050,Laundry Detergent 050,Cedar & Co.,5.59,1,1,1159,True
+51,1,3,SYN-0051,Canned Tomatoes 051,Northstar,34.64,1,2,884,True
+52,2,4,SYN-0052,Green Tea 052,Harbor,11.02,1,6,1167,True
+53,3,5,SYN-0053,Coffee Beans 053,Evergreen,29.87,1,1,902,True
+54,4,6,SYN-0054,Rice Crackers 054,Market House,17.76,1,6,435,True
+55,5,7,SYN-0055,Sparkling Water 055,Cedar & Co.,4.79,1,2,1097,True
+56,1,8,SYN-0056,Roasted Nuts 056,Northstar,18.0,1,6,362,True
+57,2,9,SYN-0057,Dish Soap 057,Harbor,12.49,1,12,758,True
+58,3,10,SYN-0058,Hand Wash 058,Evergreen,7.75,1,2,1049,True
+59,4,11,SYN-0059,Pasta 059,Market House,29.13,1,2,905,True
+60,5,12,SYN-0060,Oat Milk 060,Cedar & Co.,17.13,1,1,808,True
+61,1,1,SYN-0061,Frozen Berries 061,Northstar,22.72,1,1,832,True
+62,2,2,SYN-0062,Paper Towels 062,Harbor,4.35,1,6,586,True
+63,3,3,SYN-0063,Pet Treats 063,Evergreen,2.78,1,1,668,True
+64,4,4,SYN-0064,Olive Oil 064,Market House,13.37,1,6,301,True
+65,5,5,SYN-0065,Baking Flour 065,Cedar & Co.,5.05,1,1,767,True
+66,1,6,SYN-0066,Storage Bags 066,Northstar,7.52,1,1,1121,True
+67,2,7,SYN-0067,Granola Bars 067,Harbor,22.6,1,2,514,True
+68,3,8,SYN-0068,Laundry Detergent 068,Evergreen,22.97,1,1,173,True
+69,4,9,SYN-0069,Canned Tomatoes 069,Market House,36.48,1,2,656,True
+70,5,10,SYN-0070,Green Tea 070,Cedar & Co.,30.02,1,1,236,True
+71,1,11,SYN-0071,Coffee Beans 071,Northstar,19.13,1,6,665,True
+72,2,12,SYN-0072,Rice Crackers 072,Harbor,35.72,1,1,750,True
+73,3,1,SYN-0073,Sparkling Water 073,Evergreen,18.65,1,12,430,True
+74,4,2,SYN-0074,Roasted Nuts 074,Market House,13.44,1,2,696,True
+75,5,3,SYN-0075,Dish Soap 075,Cedar & Co.,17.38,1,1,172,True
+76,1,4,SYN-0076,Hand Wash 076,Northstar,31.62,1,1,1090,True
+77,2,5,SYN-0077,Pasta 077,Harbor,6.4,1,1,731,True
+78,3,6,SYN-0078,Oat Milk 078,Evergreen,5.24,1,6,855,True
+79,4,7,SYN-0079,Frozen Berries 079,Market House,11.59,1,1,842,True
+80,5,8,SYN-0080,Paper Towels 080,Cedar & Co.,27.97,1,12,957,True
+81,1,9,SYN-0081,Pet Treats 081,Northstar,5.21,1,6,1111,True
+82,2,10,SYN-0082,Olive Oil 082,Harbor,9.71,1,1,189,True
+83,3,11,SYN-0083,Baking Flour 083,Evergreen,21.64,1,2,539,True
+84,4,12,SYN-0084,Storage Bags 084,Market House,31.74,1,2,998,True
+85,5,1,SYN-0085,Granola Bars 085,Cedar & Co.,12.9,1,1,1150,True
+86,1,2,SYN-0086,Laundry Detergent 086,Northstar,11.94,1,6,690,True
+87,2,3,SYN-0087,Canned Tomatoes 087,Harbor,10.66,1,12,1132,True
+88,3,4,SYN-0088,Green Tea 088,Evergreen,7.3,1,2,197,True
+89,4,5,SYN-0089,Coffee Beans 089,Market House,17.24,1,12,1191,True
+90,5,6,SYN-0090,Rice Crackers 090,Cedar & Co.,34.02,1,1,936,True
+91,1,7,SYN-0091,Sparkling Water 091,Northstar,33.99,1,1,1088,True
+92,2,8,SYN-0092,Roasted Nuts 092,Harbor,20.32,1,2,481,True
+93,3,9,SYN-0093,Dish Soap 093,Evergreen,29.62,1,1,844,True
+94,4,10,SYN-0094,Hand Wash 094,Market House,14.98,1,12,249,True
+95,5,11,SYN-0095,Pasta 095,Cedar & Co.,28.69,1,1,425,True
+96,1,12,SYN-0096,Oat Milk 096,Northstar,35.68,1,12,403,True
+97,2,1,SYN-0097,Frozen Berries 097,Harbor,5.76,1,1,1022,True
+98,3,2,SYN-0098,Paper Towels 098,Evergreen,6.88,1,6,338,True
+99,4,3,SYN-0099,Pet Treats 099,Market House,23.28,1,6,1068,True
+100,5,4,SYN-0100,Olive Oil 100,Cedar & Co.,8.47,1,1,475,True
+101,1,5,SYN-0101,Baking Flour 101,Northstar,29.82,1,1,1170,True
+102,2,6,SYN-0102,Storage Bags 102,Harbor,19.65,1,2,301,True
+103,3,7,SYN-0103,Granola Bars 103,Evergreen,1.76,1,1,391,True
+104,4,8,SYN-0104,Laundry Detergent 104,Market House,6.09,1,1,861,True
+105,5,9,SYN-0105,Canned Tomatoes 105,Cedar & Co.,5.73,1,1,681,True
+106,1,10,SYN-0106,Green Tea 106,Northstar,26.76,1,6,760,True
+107,2,11,SYN-0107,Coffee Beans 107,Harbor,8.59,1,12,994,True
+108,3,12,SYN-0108,Rice Crackers 108,Evergreen,27.54,1,1,925,True
+109,4,1,SYN-0109,Sparkling Water 109,Market House,6.07,1,2,279,True
+110,5,2,SYN-0110,Roasted Nuts 110,Cedar & Co.,35.34,1,1,567,True
+111,1,3,SYN-0111,Dish Soap 111,Northstar,12.31,1,1,663,True
+112,2,4,SYN-0112,Hand Wash 112,Harbor,25.61,1,1,1153,True
+113,3,5,SYN-0113,Pasta 113,Evergreen,11.78,1,12,1121,True
+114,4,6,SYN-0114,Oat Milk 114,Market House,2.16,1,2,732,True
+115,5,7,SYN-0115,Frozen Berries 115,Cedar & Co.,24.55,1,12,261,True
+116,1,8,SYN-0116,Paper Towels 116,Northstar,6.41,1,6,590,True
+117,2,9,SYN-0117,Pet Treats 117,Harbor,36.76,1,1,775,True
+118,3,10,SYN-0118,Olive Oil 118,Evergreen,35.54,1,6,994,True
+119,4,11,SYN-0119,Baking Flour 119,Market House,18.43,1,6,974,True
+120,5,12,SYN-0120,Storage Bags 120,Cedar & Co.,1.91,1,6,264,True
+121,1,1,SYN-0121,Granola Bars 121,Northstar,31.73,1,1,986,True
+122,2,2,SYN-0122,Laundry Detergent 122,Harbor,9.8,1,1,707,True
+123,3,3,SYN-0123,Canned Tomatoes 123,Evergreen,23.52,1,12,1061,True
+124,4,4,SYN-0124,Green Tea 124,Market House,23.41,1,1,583,True
+125,5,5,SYN-0125,Coffee Beans 125,Cedar & Co.,15.0,1,12,597,True
+126,1,6,SYN-0126,Rice Crackers 126,Northstar,25.21,1,12,1060,True
+127,2,7,SYN-0127,Sparkling Water 127,Harbor,17.93,1,2,410,True
+128,3,8,SYN-0128,Roasted Nuts 128,Evergreen,9.95,1,12,933,True
+129,4,9,SYN-0129,Dish Soap 129,Market House,31.26,1,12,260,True
+130,5,10,SYN-0130,Hand Wash 130,Cedar & Co.,3.7,1,2,774,True
+131,1,11,SYN-0131,Pasta 131,Northstar,6.62,1,1,1015,True
+132,2,12,SYN-0132,Oat Milk 132,Harbor,12.65,1,12,301,True
+133,3,1,SYN-0133,Frozen Berries 133,Evergreen,35.1,1,2,323,True
+134,4,2,SYN-0134,Paper Towels 134,Market House,11.71,1,2,311,True
+135,5,3,SYN-0135,Pet Treats 135,Cedar & Co.,5.49,1,2,172,True
+136,1,4,SYN-0136,Olive Oil 136,Northstar,3.29,1,1,333,True
+137,2,5,SYN-0137,Baking Flour 137,Harbor,3.21,1,2,770,True
+138,3,6,SYN-0138,Storage Bags 138,Evergreen,26.27,1,12,563,True
+139,4,7,SYN-0139,Granola Bars 139,Market House,12.94,1,12,679,True
+140,5,8,SYN-0140,Laundry Detergent 140,Cedar & Co.,33.41,1,6,1043,True
+141,1,9,SYN-0141,Canned Tomatoes 141,Northstar,2.85,1,2,340,True
+142,2,10,SYN-0142,Green Tea 142,Harbor,9.95,1,1,411,True
+143,3,11,SYN-0143,Coffee Beans 143,Evergreen,22.24,1,12,587,True
+144,4,12,SYN-0144,Rice Crackers 144,Market House,3.06,1,1,542,True
+145,5,1,SYN-0145,Sparkling Water 145,Cedar & Co.,20.5,1,12,256,True
+146,1,2,SYN-0146,Roasted Nuts 146,Northstar,31.88,1,1,204,True
+147,2,3,SYN-0147,Dish Soap 147,Harbor,35.24,1,6,254,True
+148,3,4,SYN-0148,Hand Wash 148,Evergreen,32.25,1,12,1097,True
+149,4,5,SYN-0149,Pasta 149,Market House,37.25,1,1,992,True
+150,5,6,SYN-0150,Oat Milk 150,Cedar & Co.,29.9,1,6,824,True
+151,1,7,SYN-0151,Frozen Berries 151,Northstar,29.88,1,6,291,True
+152,2,8,SYN-0152,Paper Towels 152,Harbor,20.95,1,1,689,True
+153,3,9,SYN-0153,Pet Treats 153,Evergreen,32.77,1,12,635,True
+154,4,10,SYN-0154,Olive Oil 154,Market House,15.4,1,6,821,True
+155,5,11,SYN-0155,Baking Flour 155,Cedar & Co.,11.04,1,1,296,True
+156,1,12,SYN-0156,Storage Bags 156,Northstar,18.81,1,1,587,True
+157,2,1,SYN-0157,Granola Bars 157,Harbor,9.8,1,1,535,True
+158,3,2,SYN-0158,Laundry Detergent 158,Evergreen,14.71,1,6,493,True
+159,4,3,SYN-0159,Canned Tomatoes 159,Market House,15.2,1,1,870,True
+160,5,4,SYN-0160,Green Tea 160,Cedar & Co.,12.16,1,6,1146,True
+161,1,5,SYN-0161,Coffee Beans 161,Northstar,34.93,1,12,654,True
+162,2,6,SYN-0162,Rice Crackers 162,Harbor,13.32,1,2,712,True
+163,3,7,SYN-0163,Sparkling Water 163,Evergreen,32.43,1,2,835,True
+164,4,8,SYN-0164,Roasted Nuts 164,Market House,30.81,1,2,709,True
+165,5,9,SYN-0165,Dish Soap 165,Cedar & Co.,24.51,1,1,452,True
+166,1,10,SYN-0166,Hand Wash 166,Northstar,28.26,1,1,362,True
+167,2,11,SYN-0167,Pasta 167,Harbor,26.78,1,2,1053,True
+168,3,12,SYN-0168,Oat Milk 168,Evergreen,6.1,1,12,795,True
+169,4,1,SYN-0169,Frozen Berries 169,Market House,4.74,1,6,912,True
+170,5,2,SYN-0170,Paper Towels 170,Cedar & Co.,4.36,1,2,1132,True
+171,1,3,SYN-0171,Pet Treats 171,Northstar,6.3,1,12,1156,True
+172,2,4,SYN-0172,Olive Oil 172,Harbor,30.68,1,2,773,True
+173,3,5,SYN-0173,Baking Flour 173,Evergreen,30.01,1,12,984,True
+174,4,6,SYN-0174,Storage Bags 174,Market House,36.02,1,1,416,True
+175,5,7,SYN-0175,Granola Bars 175,Cedar & Co.,22.94,1,1,249,True
+176,1,8,SYN-0176,Laundry Detergent 176,Northstar,23.89,1,1,329,True
+177,2,9,SYN-0177,Canned Tomatoes 177,Harbor,22.01,1,1,751,True
+178,3,10,SYN-0178,Green Tea 178,Evergreen,18.37,1,6,698,True
+179,4,11,SYN-0179,Coffee Beans 179,Market House,29.32,1,12,989,True
+180,5,12,SYN-0180,Rice Crackers 180,Cedar & Co.,19.34,1,1,779,True
+181,1,1,SYN-0181,Sparkling Water 181,Northstar,35.47,1,12,275,True
+182,2,2,SYN-0182,Roasted Nuts 182,Harbor,5.55,1,6,242,True
+183,3,3,SYN-0183,Dish Soap 183,Evergreen,25.43,1,6,589,True
+184,4,4,SYN-0184,Hand Wash 184,Market House,29.71,1,1,854,True
+185,5,5,SYN-0185,Pasta 185,Cedar & Co.,13.51,1,6,1093,True
+186,1,6,SYN-0186,Oat Milk 186,Northstar,29.27,1,6,434,True
+187,2,7,SYN-0187,Frozen Berries 187,Harbor,14.63,1,2,480,True
+188,3,8,SYN-0188,Paper Towels 188,Evergreen,7.04,1,12,305,True
+189,4,9,SYN-0189,Pet Treats 189,Market House,35.65,1,2,609,True
+190,5,10,SYN-0190,Olive Oil 190,Cedar & Co.,15.34,1,1,916,True
+191,1,11,SYN-0191,Baking Flour 191,Northstar,21.57,1,12,1132,True
+192,2,12,SYN-0192,Storage Bags 192,Harbor,29.93,1,6,653,True
+193,3,1,SYN-0193,Granola Bars 193,Evergreen,15.08,1,6,1185,True
+194,4,2,SYN-0194,Laundry Detergent 194,Market House,27.63,1,12,1148,True
+195,5,3,SYN-0195,Canned Tomatoes 195,Cedar & Co.,5.6,1,1,1043,True
+196,1,4,SYN-0196,Green Tea 196,Northstar,24.66,1,1,278,True
+197,2,5,SYN-0197,Coffee Beans 197,Harbor,22.87,1,1,870,True
+198,3,6,SYN-0198,Rice Crackers 198,Evergreen,1.7,1,1,627,True
+199,4,7,SYN-0199,Sparkling Water 199,Market House,31.58,1,2,460,True
+200,5,8,SYN-0200,Roasted Nuts 200,Cedar & Co.,18.1,1,1,614,True
+201,1,9,SYN-0201,Dish Soap 201,Northstar,12.35,1,2,1114,True
+202,2,10,SYN-0202,Hand Wash 202,Harbor,29.96,1,2,266,True
+203,3,11,SYN-0203,Pasta 203,Evergreen,37.89,1,1,1073,True
+204,4,12,SYN-0204,Oat Milk 204,Market House,11.68,1,6,1028,True
+205,5,1,SYN-0205,Frozen Berries 205,Cedar & Co.,5.16,1,6,1199,True
+206,1,2,SYN-0206,Paper Towels 206,Northstar,25.71,1,1,832,True
+207,2,3,SYN-0207,Pet Treats 207,Harbor,4.57,1,6,1091,True
+208,3,4,SYN-0208,Olive Oil 208,Evergreen,2.32,1,1,402,True
+209,4,5,SYN-0209,Baking Flour 209,Market House,6.51,1,12,965,True
+210,5,6,SYN-0210,Storage Bags 210,Cedar & Co.,8.53,1,1,1106,True
+211,1,7,SYN-0211,Granola Bars 211,Northstar,25.37,1,12,187,True
+212,2,8,SYN-0212,Laundry Detergent 212,Harbor,1.45,1,1,204,True
+213,3,9,SYN-0213,Canned Tomatoes 213,Evergreen,23.52,1,12,991,True
+214,4,10,SYN-0214,Green Tea 214,Market House,10.02,1,1,1041,True
+215,5,11,SYN-0215,Coffee Beans 215,Cedar & Co.,3.35,1,6,991,True
+216,1,12,SYN-0216,Rice Crackers 216,Northstar,35.35,1,1,960,True
+217,2,1,SYN-0217,Sparkling Water 217,Harbor,26.91,1,12,1029,True
+218,3,2,SYN-0218,Roasted Nuts 218,Evergreen,2.73,1,2,361,True
+219,4,3,SYN-0219,Dish Soap 219,Market House,5.84,1,6,679,True
+220,5,4,SYN-0220,Hand Wash 220,Cedar & Co.,28.64,1,2,811,True
+221,1,5,SYN-0221,Pasta 221,Northstar,32.53,1,2,312,True
+222,2,6,SYN-0222,Oat Milk 222,Harbor,28.25,1,1,352,True
+223,3,7,SYN-0223,Frozen Berries 223,Evergreen,11.2,1,1,895,True
+224,4,8,SYN-0224,Paper Towels 224,Market House,37.27,1,6,792,True
+225,5,9,SYN-0225,Pet Treats 225,Cedar & Co.,3.25,1,1,797,True
+226,1,10,SYN-0226,Olive Oil 226,Northstar,2.81,1,1,1078,True
+227,2,11,SYN-0227,Baking Flour 227,Harbor,27.33,1,2,331,True
+228,3,12,SYN-0228,Storage Bags 228,Evergreen,4.62,1,6,342,True
+229,4,1,SYN-0229,Granola Bars 229,Market House,37.27,1,2,631,True
+230,5,2,SYN-0230,Laundry Detergent 230,Cedar & Co.,30.06,1,1,818,True
+231,1,3,SYN-0231,Canned Tomatoes 231,Northstar,22.29,1,2,302,True
+232,2,4,SYN-0232,Green Tea 232,Harbor,36.02,1,2,466,True
+233,3,5,SYN-0233,Coffee Beans 233,Evergreen,22.49,1,2,884,True
+234,4,6,SYN-0234,Rice Crackers 234,Market House,25.11,1,2,1137,True
+235,5,7,SYN-0235,Sparkling Water 235,Cedar & Co.,6.71,1,2,683,True
+236,1,8,SYN-0236,Roasted Nuts 236,Northstar,16.1,1,12,647,True
+237,2,9,SYN-0237,Dish Soap 237,Harbor,5.63,1,12,290,True
+238,3,10,SYN-0238,Hand Wash 238,Evergreen,11.47,1,1,469,True
+239,4,11,SYN-0239,Pasta 239,Market House,16.98,1,6,791,True
+240,5,12,SYN-0240,Oat Milk 240,Cedar & Co.,24.57,1,12,582,True
+241,1,1,SYN-0241,Frozen Berries 241,Northstar,16.27,1,12,378,True
+242,2,2,SYN-0242,Paper Towels 242,Harbor,22.87,1,6,482,True
+243,3,3,SYN-0243,Pet Treats 243,Evergreen,2.58,1,1,589,True
+244,4,4,SYN-0244,Olive Oil 244,Market House,18.67,1,1,386,True
+245,5,5,SYN-0245,Baking Flour 245,Cedar & Co.,22.29,1,1,744,True
+246,1,6,SYN-0246,Storage Bags 246,Northstar,27.05,1,2,830,True
+247,2,7,SYN-0247,Granola Bars 247,Harbor,25.23,1,6,482,True
+248,3,8,SYN-0248,Laundry Detergent 248,Evergreen,30.19,1,1,726,True
+249,4,9,SYN-0249,Canned Tomatoes 249,Market House,17.1,1,2,807,True
+250,5,10,SYN-0250,Green Tea 250,Cedar & Co.,14.5,1,12,688,True
+251,1,11,SYN-0251,Coffee Beans 251,Northstar,28.32,1,2,1080,True
+252,2,12,SYN-0252,Rice Crackers 252,Harbor,35.1,1,12,678,True
+253,3,1,SYN-0253,Sparkling Water 253,Evergreen,20.37,1,1,989,True
+254,4,2,SYN-0254,Roasted Nuts 254,Market House,12.81,1,2,1029,True
+255,5,3,SYN-0255,Dish Soap 255,Cedar & Co.,19.41,1,1,271,True
+256,1,4,SYN-0256,Hand Wash 256,Northstar,3.9,1,12,1034,True
+257,2,5,SYN-0257,Pasta 257,Harbor,3.29,1,1,444,True
+258,3,6,SYN-0258,Oat Milk 258,Evergreen,13.53,1,2,331,True
+259,4,7,SYN-0259,Frozen Berries 259,Market House,12.79,1,1,929,True
+260,5,8,SYN-0260,Paper Towels 260,Cedar & Co.,1.79,1,2,1018,True
+261,1,9,SYN-0261,Pet Treats 261,Northstar,32.73,1,2,540,True
+262,2,10,SYN-0262,Olive Oil 262,Harbor,6.9,1,1,780,True
+263,3,11,SYN-0263,Baking Flour 263,Evergreen,5.65,1,2,533,True
+264,4,12,SYN-0264,Storage Bags 264,Market House,36.47,1,1,1195,True
+265,5,1,SYN-0265,Granola Bars 265,Cedar & Co.,29.62,1,2,476,True
+266,1,2,SYN-0266,Laundry Detergent 266,Northstar,26.52,1,1,890,True
+267,2,3,SYN-0267,Canned Tomatoes 267,Harbor,15.5,1,12,822,True
+268,3,4,SYN-0268,Green Tea 268,Evergreen,1.64,1,6,369,True
+269,4,5,SYN-0269,Coffee Beans 269,Market House,20.55,1,2,321,True
+270,5,6,SYN-0270,Rice Crackers 270,Cedar & Co.,7.35,1,2,1028,True
+271,1,7,SYN-0271,Sparkling Water 271,Northstar,37.6,1,12,733,True
+272,2,8,SYN-0272,Roasted Nuts 272,Harbor,32.09,1,12,1189,True
+273,3,9,SYN-0273,Dish Soap 273,Evergreen,6.45,1,2,620,True
+274,4,10,SYN-0274,Hand Wash 274,Market House,15.68,1,1,234,True
+275,5,11,SYN-0275,Pasta 275,Cedar & Co.,29.01,1,1,605,True
+276,1,12,SYN-0276,Oat Milk 276,Northstar,18.5,1,12,308,True
+277,2,1,SYN-0277,Frozen Berries 277,Harbor,7.9,1,1,1102,True
+278,3,2,SYN-0278,Paper Towels 278,Evergreen,2.89,1,6,394,True
+279,4,3,SYN-0279,Pet Treats 279,Market House,11.98,1,1,664,True
+280,5,4,SYN-0280,Olive Oil 280,Cedar & Co.,22.8,1,6,667,True
+281,1,5,SYN-0281,Baking Flour 281,Northstar,4.34,1,1,405,True
+282,2,6,SYN-0282,Storage Bags 282,Harbor,32.25,1,12,819,True
+283,3,7,SYN-0283,Granola Bars 283,Evergreen,25.11,1,2,853,True
+284,4,8,SYN-0284,Laundry Detergent 284,Market House,29.29,1,6,211,True
+285,5,9,SYN-0285,Canned Tomatoes 285,Cedar & Co.,14.72,1,6,716,True
+286,1,10,SYN-0286,Green Tea 286,Northstar,13.69,1,12,1036,True
+287,2,11,SYN-0287,Coffee Beans 287,Harbor,18.98,1,2,957,True
+288,3,12,SYN-0288,Rice Crackers 288,Evergreen,32.56,1,1,680,True
+289,4,1,SYN-0289,Sparkling Water 289,Market House,34.68,1,1,766,True
+290,5,2,SYN-0290,Roasted Nuts 290,Cedar & Co.,32.5,1,1,507,True
+291,1,3,SYN-0291,Dish Soap 291,Northstar,19.58,1,12,707,True
+292,2,4,SYN-0292,Hand Wash 292,Harbor,5.11,1,1,568,True
+293,3,5,SYN-0293,Pasta 293,Evergreen,34.96,1,6,812,True
+294,4,6,SYN-0294,Oat Milk 294,Market House,7.77,1,1,505,True
+295,5,7,SYN-0295,Frozen Berries 295,Cedar & Co.,8.29,1,1,176,True
+296,1,8,SYN-0296,Paper Towels 296,Northstar,35.33,1,6,620,True
+297,2,9,SYN-0297,Pet Treats 297,Harbor,12.55,1,1,778,True
+298,3,10,SYN-0298,Olive Oil 298,Evergreen,1.52,1,2,441,True
+299,4,11,SYN-0299,Baking Flour 299,Market House,27.09,1,2,815,True
+300,5,12,SYN-0300,Storage Bags 300,Cedar & Co.,37.33,1,12,801,True

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #17231f;
+  --color-leaf: #236b4b;
+  --color-canvas: #f7f8f5;
+  --color-line: #e7e9e3;
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #17231f;
+  background: #f7f8f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.panel {
+  @apply rounded-2xl border border-line bg-white shadow-sm;
+}
+
+@layer components {
+  .field {
+    @apply min-w-0 rounded-lg border border-line bg-white px-3 py-2.5 text-sm outline-none transition focus:border-leaf focus:ring-2 focus:ring-emerald-100;
+  }
+  .button-primary {
+    @apply rounded-lg bg-leaf px-4 py-2.5 text-sm font-medium text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .button-muted {
+    @apply rounded-lg border border-line bg-white px-3 py-2 text-sm font-medium text-ink transition hover:bg-canvas disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .eyebrow {
+    @apply text-[10px] font-semibold tracking-[0.18em] text-leaf;
+  }
+}

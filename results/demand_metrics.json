@@ -1,0 +1,91 @@
+{
+  "synthetic_data": true,
+  "train_through": "2026-02-23",
+  "validation_through": "2026-06-15",
+  "test_start": "2026-06-22",
+  "test_end": "2026-10-05",
+  "validation_mae": {
+    "ExtraTrees": 0.3275127170138889,
+    "RandomForest": 0.3483827660439965,
+    "XGBoost": 0.3753037633393433
+  },
+  "results": [
+    {
+      "model": "ExtraTrees",
+      "split": "test",
+      "mae": 0.2394427517,
+      "rmse": 0.9069514999,
+      "wape": 66.396603601,
+      "mape": 118.7802729868,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "RandomForest",
+      "split": "test",
+      "mae": 0.2306329653,
+      "rmse": 0.9130822241,
+      "wape": 63.9536818993,
+      "mape": 117.8019582826,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "XGBoost",
+      "split": "test",
+      "mae": 0.304509564,
+      "rmse": 1.1199207738,
+      "wape": 84.4393938172,
+      "mape": 153.1101928747,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "seasonal_naive",
+      "split": "test",
+      "mae": 0.6597916667,
+      "rmse": 1.8593793767,
+      "wape": 182.9578278452,
+      "mape": 97.172462241,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "moving_average_4",
+      "split": "test",
+      "mae": 1.3613541667,
+      "rmse": 2.1769866406,
+      "wape": 377.4985557481,
+      "mape": 81.8134551268,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "global_product_mean",
+      "split": "test",
+      "mae": 1.2341782407,
+      "rmse": 1.5505230267,
+      "wape": 342.2331343475,
+      "mape": 64.2710199438,
+      "mape_excluded_points": 4362,
+      "n_points": 4800,
+      "status": null
+    },
+    {
+      "model": "LSTM",
+      "split": "test",
+      "mae": null,
+      "rmse": null,
+      "wape": null,
+      "mape": null,
+      "mape_excluded_points": 0,
+      "n_points": 4800,
+      "status": "skipped_insufficient_history"
+    }
+  ]
+}

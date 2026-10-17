@@ -1,0 +1,30 @@
+{
+  "synthetic_data": true,
+  "split": {
+    "train_through": "2026-03-02/2026-03-08",
+    "validation_through": "2026-06-22/2026-06-28",
+    "test_after": "2026-06-22/2026-06-28"
+  },
+  "selected_alpha": 0.2,
+  "k": 10,
+  "results": [
+    {
+      "model": "hybrid",
+      "k": 10,
+      "precision_at_k": 0.07400000000000001,
+      "recall_at_k": 0.09815456765456766,
+      "f1_at_k": 0.0805516785259281,
+      "ndcg_at_k": 0.09327483380788192,
+      "retailers_evaluated": 50
+    },
+    {
+      "model": "popularity",
+      "k": 10,
+      "precision_at_k": 0.016,
+      "recall_at_k": 0.017005835667600375,
+      "f1_at_k": 0.016018551394712387,
+      "ndcg_at_k": 0.017776658217870077,
+      "retailers_evaluated": 50
+    }
+  ]
+}

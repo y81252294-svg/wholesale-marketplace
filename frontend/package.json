@@ -1,0 +1,26 @@
+{
+  "name": "wholesale-retail-marketplace",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "4.4.1",
+    "@tailwindcss/vite": "4.3.3",
+    "vite": "6.4.4",
+    "typescript": "~5.8.3",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "recharts": "2.15.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "4.3.3",
+    "postcss": "8.5.30",
+    "@types/react": "19.0.12",
+    "@types/react-dom": "19.0.4"
+  }
+}

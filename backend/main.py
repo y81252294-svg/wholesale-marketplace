@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+import logging
 import os
 
 from fastapi import FastAPI, HTTPException
@@ -9,6 +10,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from backend.api import router
 from backend.database import Base, engine
 from backend import models  # noqa: F401
+
+logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
@@ -43,9 +46,39 @@ def health():
             connection.execute(text("SELECT 1"))
             existing_tables = set(inspect(connection).get_table_names())
     except SQLAlchemyError as error:
+        original_error = error.orig
+        sqlstate = getattr(original_error, "sqlstate", None)
+        error_type = type(original_error).__name__
+        logger.error(
+            "Database readiness check failed (driver_error=%s, sqlstate=%s)",
+            error_type,
+            sqlstate or "unavailable",
+        )
+        if sqlstate == "28P01":
+            detail = (
+                "Database authentication failed. Check the Supabase Session Pooler username "
+                "and current database password in Vercel's DATABASE_URL."
+            )
+        elif sqlstate == "3D000":
+            detail = (
+                "The database named in DATABASE_URL does not exist. Check the database name "
+                "in the Supabase Session Pooler URL."
+            )
+        elif sqlstate and sqlstate.startswith("08"):
+            detail = (
+                "The database connection could not be established. Check the Supabase pooler "
+                "host, port, project status, and network availability."
+            )
+        elif error_type == "OperationalError":
+            detail = (
+                "The database connection failed. Check that DATABASE_URL is the Supabase "
+                "Session Pooler URL, with the correct host, port, and current password."
+            )
+        else:
+            detail = f"Database connection failed ({error_type}). Check the Vercel function logs."
         raise HTTPException(
             status_code=503,
-            detail="Database unavailable. Verify DATABASE_URL and hosted database connectivity.",
+            detail=detail,
         ) from error
 
     missing_tables = sorted(table.name for table in Base.metadata.sorted_tables if table.name not in existing_tables)

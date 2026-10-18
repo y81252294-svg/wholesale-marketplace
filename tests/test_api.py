@@ -1,6 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
+from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
@@ -127,6 +128,23 @@ def test_health_reports_uninitialized_database(client, monkeypatch):
     assert response.status_code == 503
     assert "alembic upgrade head" in response.json()["detail"]
     empty_engine.dispose()
+
+
+def test_health_reports_database_authentication_failure_without_secrets(client, monkeypatch):
+    class DatabaseAuthenticationError(Exception):
+        sqlstate = "28P01"
+
+    class UnavailableEngine:
+        def connect(self):
+            raise OperationalError("SELECT 1", {}, DatabaseAuthenticationError("password=do-not-return-this"))
+
+    monkeypatch.setattr(backend_main, "engine", UnavailableEngine())
+
+    response = client.get("/api/health")
+
+    assert response.status_code == 503
+    assert "authentication failed" in response.json()["detail"]
+    assert "do-not-return-this" not in response.text
 
 
 def test_order_enforces_pack_multiple_and_wholesaler_can_confirm(client):

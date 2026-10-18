@@ -32,3 +32,13 @@ def test_vercel_handles_brackets_in_supabase_credentials(monkeypatch):
         "postgresql+psycopg://postgres.project:%5BYOUR-PASSWORD%5D"
         "@aws-0-region.pooler.supabase.com:5432/postgres?sslmode=require"
     )
+
+
+def test_vercel_encodes_reserved_characters_in_supabase_password(monkeypatch):
+    monkeypatch.setenv("VERCEL", "1")
+    assert normalize_database_url(
+        "postgresql://postgres.project:p@ss:/?#%word@aws-0-region.pooler.supabase.com:5432/postgres"
+    ) == (
+        "postgresql+psycopg://postgres.project:p%40ss%3A%2F%3F%23%25word"
+        "@aws-0-region.pooler.supabase.com:5432/postgres?sslmode=require"
+    )

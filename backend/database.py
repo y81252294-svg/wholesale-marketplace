@@ -1,5 +1,5 @@
 import os
-from urllib.parse import parse_qsl, urlencode
+from urllib.parse import parse_qsl, quote, unquote, urlencode
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
@@ -14,12 +14,19 @@ def normalize_database_url(database_url: str) -> str:
 
     if os.getenv("VERCEL") and database_url.startswith("postgresql+psycopg://"):
         scheme, _, remainder = database_url.partition("://")
-        authority, path_separator, path_and_query = remainder.partition("/")
-        userinfo, at_separator, host = authority.rpartition("@")
+        userinfo, at_separator, endpoint = remainder.rpartition("@")
         if at_separator:
-            userinfo = userinfo.replace("[", "%5B").replace("]", "%5D")
-            authority = f"{userinfo}@{host}"
-        database_url = f"{scheme}://{authority}{path_separator}{path_and_query}"
+            host, path_separator, path_and_query = endpoint.partition("/")
+            username, separator, password = userinfo.partition(":")
+            username = quote(unquote(username), safe="")
+            if separator:
+                password = quote(unquote(password), safe="")
+                userinfo = f"{username}:{password}"
+            else:
+                userinfo = username
+            database_url = f"{scheme}://{userinfo}@{host}{path_separator}{path_and_query}"
+        else:
+            database_url = f"{scheme}://{endpoint}"
 
         base_url, separator, query_string = database_url.partition("?")
         query = parse_qsl(query_string, keep_blank_values=True) if separator else []

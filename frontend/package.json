@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --host 0.0.0.0"
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run"
   },
   "dependencies": {
     "@vitejs/plugin-react": "4.4.1",
@@ -15,12 +16,17 @@
     "typescript": "~5.8.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "recharts": "2.15.1"
+    "react-is": "19.0.0",
+    "recharts": "3.10.1"
   },
   "devDependencies": {
     "tailwindcss": "4.3.3",
     "postcss": "8.5.30",
     "@types/react": "19.0.12",
-    "@types/react-dom": "19.0.4"
+    "@types/react-dom": "19.0.4",
+    "vitest": "3.2.4"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
   }
 }

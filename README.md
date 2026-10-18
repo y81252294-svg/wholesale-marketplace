@@ -94,6 +94,7 @@ Python 3.11, Node.js 20+, npm, and (for Docker) Docker Compose are required.
    ```
 
    Open <http://localhost:5173>. The Vite dev server proxies `/api` requests to `http://127.0.0.1:8000`.
+   Run the frontend build and chart smoke test with `npm run build` and `npm test`.
 
 ## Deploy on Vercel
 
@@ -104,7 +105,7 @@ The root `vercel.json` configures a Vercel Services deployment with two public r
 
 The browser calls the API through the same-origin `/api` path, so no service binding is required (bindings are for server-side service-to-service calls). Before deploying, configure `DATABASE_URL` with a persistent hosted PostgreSQL database and set a strong `JWT_SECRET_KEY` in the Vercel project environment for Production and Preview. For Supabase, use the Session Pooler connection string and replace its password placeholder; Vercel automatically enables SSL for PostgreSQL connections and disables SQLAlchemy connection pooling. Supabase PostgreSQL URLs using either `postgres://` or `postgresql://` are normalized to the installed psycopg 3 driver automatically. Do not use the default SQLite database or sample credentials in a hosted environment. Run database migrations against the hosted database with `alembic upgrade head`; synthetic demo accounts are only created by explicitly running `python -m data.seed` and should not be seeded into a public production database.
 
-Import the GitHub repository into Vercel and deploy it as one project using the committed root `vercel.json`. The API documentation will be available at `/api/docs`, and the health endpoint at `/api/health`.
+Import the GitHub repository into Vercel and deploy it as one project using the committed root `vercel.json`. The API documentation will be available at `/api/docs`, and the database-readiness health endpoint at `/api/health`. Before the first deployment, run the database migration once against the hosted database with the same `DATABASE_URL`: `alembic upgrade head`. Vercel no longer creates tables during function startup; this prevents a temporary or misconfigured database connection from crashing the entire API function. If the health endpoint returns 503, its response explains whether the database connection is unavailable or the schema still needs migrations.
 
 ## Run with Docker Compose
 
@@ -174,6 +175,7 @@ python -m pytest -q
 ```
 
 Tests cover API health, role approval/login/order workflows, weekly zero-fill preprocessing, leakage-safe chronological splitting, recommendation ranking metrics, and regression metrics including MAPE with zero actuals.
+The frontend also has a chart-component smoke test; run it from `frontend/` with `npm test`.
 
 ## Security notes
 

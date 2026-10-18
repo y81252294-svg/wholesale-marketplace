@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
+from backend import main as backend_main
 from backend.database import Base, get_db
 from backend.main import app
 from backend.models import Category, Inventory, Product, Retailer, User, UserRole, Wholesaler
@@ -11,12 +12,13 @@ from backend.security import hash_password
 
 
 @pytest.fixture
-def client():
+def client(monkeypatch):
     engine = create_engine(
         "sqlite://",
         connect_args={"check_same_thread": False},
         poolclass=StaticPool,
     )
+    monkeypatch.setattr(backend_main, "engine", engine)
     testing_session = sessionmaker(bind=engine, autoflush=False, autocommit=False)
     Base.metadata.create_all(bind=engine)
     db = testing_session()
@@ -103,6 +105,28 @@ def test_health_and_admin_approval_flow(client):
     retailer_id = next(row["id"] for row in pending.json() if row["email"] == "retailer@example.test")
     assert client.post(f"/api/admin/accounts/{retailer_id}/approve", headers=admin_headers).status_code == 200
     assert sign_in(client, "retailer@example.test")["Authorization"].startswith("Bearer ")
+
+
+def test_vercel_startup_does_not_create_tables(monkeypatch):
+    monkeypatch.setenv("VERCEL", "1")
+
+    def fail_if_called(*args, **kwargs):
+        raise AssertionError("Vercel startup must not connect to the database")
+
+    monkeypatch.setattr(Base.metadata, "create_all", fail_if_called)
+    with TestClient(app):
+        pass
+
+
+def test_health_reports_uninitialized_database(client, monkeypatch):
+    empty_engine = create_engine("sqlite://")
+    monkeypatch.setattr(backend_main, "engine", empty_engine)
+
+    response = client.get("/api/health")
+
+    assert response.status_code == 503
+    assert "alembic upgrade head" in response.json()["detail"]
+    empty_engine.dispose()
 
 
 def test_order_enforces_pack_multiple_and_wholesaler_can_confirm(client):

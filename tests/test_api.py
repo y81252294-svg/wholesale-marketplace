@@ -147,6 +147,19 @@ def test_health_reports_database_authentication_failure_without_secrets(client, 
     assert "do-not-return-this" not in response.text
 
 
+def test_health_reports_database_hostname_failure(client, monkeypatch):
+    class UnavailableEngine:
+        def connect(self):
+            raise OperationalError("SELECT 1", {}, Exception("could not translate host name"))
+
+    monkeypatch.setattr(backend_main, "engine", UnavailableEngine())
+
+    response = client.get("/api/health")
+
+    assert response.status_code == 503
+    assert "hostname could not be resolved" in response.json()["detail"]
+
+
 def test_order_enforces_pack_multiple_and_wholesaler_can_confirm(client):
     admin_headers = sign_in(client, "admin@example.test")
     pending = client.get("/api/admin/accounts", headers=admin_headers).json()

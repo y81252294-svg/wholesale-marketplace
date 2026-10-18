@@ -15,6 +15,9 @@ dependencies = [
     "uvicorn[standard]==0.34.0",
 ]
 
+[tool.vercel]
+entrypoint = "main:app"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]

@@ -22,3 +22,13 @@ def test_vercel_preserves_explicit_ssl_mode(monkeypatch):
     assert normalize_database_url(
         "postgresql://user:pass@host:5432/db?sslmode=verify-full"
     ) == "postgresql+psycopg://user:pass@host:5432/db?sslmode=verify-full"
+
+
+def test_vercel_handles_brackets_in_supabase_credentials(monkeypatch):
+    monkeypatch.setenv("VERCEL", "1")
+    assert normalize_database_url(
+        "postgresql://postgres.project:[YOUR-PASSWORD]@aws-0-region.pooler.supabase.com:5432/postgres"
+    ) == (
+        "postgresql+psycopg://postgres.project:%5BYOUR-PASSWORD%5D"
+        "@aws-0-region.pooler.supabase.com:5432/postgres?sslmode=require"
+    )

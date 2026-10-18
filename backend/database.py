@@ -1,5 +1,5 @@
 import os
-from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.parse import parse_qsl, urlencode
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
@@ -13,10 +13,19 @@ def normalize_database_url(database_url: str) -> str:
         database_url = database_url.replace("postgresql://", "postgresql+psycopg://", 1)
 
     if os.getenv("VERCEL") and database_url.startswith("postgresql+psycopg://"):
-        parts = urlsplit(database_url)
-        query = dict(parse_qsl(parts.query, keep_blank_values=True))
-        query.setdefault("sslmode", "require")
-        database_url = urlunsplit(parts._replace(query=urlencode(query)))
+        scheme, _, remainder = database_url.partition("://")
+        authority, path_separator, path_and_query = remainder.partition("/")
+        userinfo, at_separator, host = authority.rpartition("@")
+        if at_separator:
+            userinfo = userinfo.replace("[", "%5B").replace("]", "%5D")
+            authority = f"{userinfo}@{host}"
+        database_url = f"{scheme}://{authority}{path_separator}{path_and_query}"
+
+        base_url, separator, query_string = database_url.partition("?")
+        query = parse_qsl(query_string, keep_blank_values=True) if separator else []
+        if not any(key == "sslmode" for key, _ in query):
+            query.append(("sslmode", "require"))
+        database_url = f"{base_url}?{urlencode(query)}"
 
     return database_url
 
